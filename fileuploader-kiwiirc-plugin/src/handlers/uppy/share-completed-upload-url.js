@@ -45,6 +45,7 @@ function sendUploadEvent(kiwiApi, url, file, headResp) {
     }
 
     const msgTemplate = config.getSetting('uploadMessage');
+    url = url.replace('simosnap.com/', 'simosnap.com/files/');
     const message = msgTemplate.replace('%URL%', event.url);
 
     buffer.say(message, {

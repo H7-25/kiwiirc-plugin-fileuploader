@@ -106,7 +106,7 @@ export default {
     },
     methods: {
         loadContent(url) {
-            kiwi.emit('mediaviewer.show', url);
+            kiwi.emit('mediaviewer.show', { url: url.replace('/files/','/iframe.php?user='), iframe:true });
         },
         updateFiles() {
             const files = [];
