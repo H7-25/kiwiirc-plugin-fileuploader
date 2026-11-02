@@ -7,6 +7,7 @@ import '@uppy/image-editor/dist/style.css';
 import * as config from '@/config.js';
 
 import UploadButton from './components/UploadButton.vue';
+import AudioMsgButton from './components/AudioMsgButton.vue';
 import sidebarFileList from './components/SidebarFileList.vue';
 import audioPlayerComponent from './components/AudioPlayer.vue';
 import { showDashboardOnDragEnter } from './handlers/show-dashboard-on-drag-enter';
@@ -41,6 +42,9 @@ kiwi.plugin('fileuploader', (kiwiApi, log) => {
 
     // add button to input bar
     kiwiApi.addUi('input', UploadButton, { props: { uppyDashboard: dashboard } });
+
+    // add button to input bar
+    kiwiApi.addUi('input', AudioMsgButton, { props: { uppyDashboard: dashboard } });
 
     // expose plugin api
     kiwiApi.fileuploader = { uppy, dashboard };
